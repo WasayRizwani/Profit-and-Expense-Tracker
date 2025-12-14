@@ -1,0 +1,46 @@
+services:
+  db:
+      image: postgres:15
+      restart: always
+      environment:
+        POSTGRES_USER: user
+        POSTGRES_PASSWORD: password
+        POSTGRES_DB: tiktrack
+      ports:
+        - "5433:5432"
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/tiktrack
+    depends_on:
+      - db
+    # No 'volumes' (code is baked in)
+    # No 'command' override (uses default production CMD from Dockerfile)
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        # IMPORTANT: In production, the browser needs the PUBLIC URL of the backend.
+        # If running on the same server, localhost might work if user visits localhost,
+        # but usually this should be their domain name e.g. https://api.mysite.com
+        # For simple VPS setup where backend is on port 8000 of the SAME IP:
+        # We can default to http://localhost:8000 but user might need to change this.
+        - VITE_API_URL=http://localhost:8000
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  postgres_data:

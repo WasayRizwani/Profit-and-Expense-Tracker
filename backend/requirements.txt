@@ -10,3 +10,7 @@ passlib
 bcrypt==4.0.1
 python-jose[cryptography]
 python-multipart
+langchain==0.2.11
+langchain-community==0.2.10
+langchain-core==0.2.23
+langchain-google-genai==1.0.7

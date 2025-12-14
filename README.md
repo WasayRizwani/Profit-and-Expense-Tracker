@@ -35,3 +35,12 @@ You can use these credentials to log in to the application locally or in product
 ### Profit Analysis
 ![Profit Analysis](docs/screenshots/profit_analysis.png)
 
+### AI Business Assistant
+The application includes a powerful **AI-powered Chat Assistant** (tiktrack-assistant) that can:
+- Answer questions about your sales, expenses, and profit.
+- Check inventory levels and identify low-stock items.
+- Provide insights into your business performance.
+
+![AI Assistant](docs/screenshots/chat_assistant.png)
+
+

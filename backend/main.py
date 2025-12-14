@@ -6,7 +6,7 @@ from database import SessionLocal, engine
 import models
 import crud
 import schemas
-from routers import auth, products, inventory, reports, sales, expenses, owners, stats
+from routers import auth, products, inventory, reports, sales, expenses, owners, stats, agent
 import os
 
 # Initialize Tables
@@ -71,6 +71,7 @@ app.include_router(sales.router, prefix="/sales", tags=["sales"])
 app.include_router(expenses.router, prefix="/expenses", tags=["expenses"])
 app.include_router(owners.router, prefix="/owners", tags=["owners"])
 app.include_router(stats.router, prefix="/stats", tags=["stats"])
+app.include_router(agent.router, prefix="/agent", tags=["agent"])
 
 @app.get("/")
 def read_root():

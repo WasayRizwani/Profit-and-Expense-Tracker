@@ -37,5 +37,4 @@ class OwnerLedger(OwnerLedgerBase):
     class Config:
         from_attributes = True
 
-class ProductEquityCreate(ProductEquityBase):
-    pass
+

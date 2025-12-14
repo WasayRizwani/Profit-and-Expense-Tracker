@@ -31,8 +31,7 @@ try:
     
     # Seed Users
     users_to_seed = [
-        ("wasayrizwani@gmail.com", "wasay123"),
-        ("waqasarshad@gmail.com", "waqas123")
+        ("admin@example.com", "admin123")
     ]
     for email, pwd in users_to_seed:
         user = crud.get_user_by_email(db, email)

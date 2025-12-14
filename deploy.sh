@@ -1,11 +1,15 @@
 #!/bin/bash
 
+# Load environment variables
+if [ -f .env ]; then
+  export $(cat .env | xargs)
+fi
+
 # Configuration
-# Replace these with your actual details or set them as environment variables
-DOCKER_USERNAME="wasay2000"
-BACKEND_IMAGE="tiktrack-backend"
-FRONTEND_IMAGE="tiktrack-frontend"
-BACKEND_URL="https://tiktrack-backend-latest.onrender.com" # From your logs
+DOCKER_USERNAME="${DOCKER_USERNAME:-wasay2000}"
+BACKEND_IMAGE="${BACKEND_IMAGE:-tiktrack-backend}"
+FRONTEND_IMAGE="${FRONTEND_IMAGE:-tiktrack-frontend}"
+BACKEND_URL="${BACKEND_URL:-https://tiktrack-backend-latest.onrender.com}"
 
 echo "🚀 Starting Deployment Build Process..."
 

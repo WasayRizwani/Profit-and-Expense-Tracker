@@ -2,7 +2,7 @@
 
 A comprehensive financial dashboard to track revenue, expenses, profit, and sales trends for your business.
 
-**Live Demo:** [https://tiktrack-frontend-latest.onrender.com/login](https://tiktrack-frontend-latest.onrender.com/login)
+**Live Demo:** [https://tiktrack-frontend-latest.onrender.com/login](https://tiktrack-frontend-latest.onrender.com)
 
 
 ## Available Data (Seeded)
